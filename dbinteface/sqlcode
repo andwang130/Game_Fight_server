@@ -1,0 +1,22 @@
+CREATE TABLE User
+(
+userid INT(4) NOT NULL AUTO_INCREMENT primary key,
+name VARCHAR(32) NOT NULL,
+pswd VARCHAR(32) NOT NULL,
+email VARCHAR(64) NOT NULL,
+phone VARCHAR(12) NOT NULL,
+createDate DATETIME NOT NULL,
+loginDate DATETIME
+);
+
+CREATE TABLE Role
+(
+roleid INT(4) NOT NULL AUTO_INCREMENT primary key,
+rolename VARCHAR(32) NOT NULL,
+exp INT NOT NULL,
+money INT NOT NULL,
+level INT NOT NULL,
+createDate DATETIME NOT NULL,
+userid INT(4) NOT NULL,
+foreign key (userid) references User(userid) on delete cascade
+)
