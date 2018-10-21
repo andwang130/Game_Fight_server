@@ -6,7 +6,7 @@
 #include <unistd.h>
 Timer::Timer(Eventloop *loop,const TimerCallback &cb, itimerspec itimerspec__,int NumofTimes__):
 timerCallback_(cb),
-itimerspec_(itimerspec__),
+itimerspec_(itimerspec__)
 {
     timeFd=timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK);
     if(timeFd==-1)
@@ -27,21 +27,28 @@ itimerspec_(itimerspec__),
     index_=0;
 
     int ret=timerfd_settime(timeFd,0,&itimerspec_,0);
+    if(ret==-1)
+    {
+        std::cout<<"timeFd_eero"<<ret<<std::endl;
+        return ;
+    }
     Channel channel(loop,timeFd);
 
     channel_=std::make_shared<Channel>(channel);
     channel_->setreadCallbck(std::bind(&Timer::readcallback,this,std::placeholders::_1));
 
     TimeQueue * timeQueue=TimeQueue::getTimeQueue();
-    timeQueue->addTimer(timerPrt.reset(this));
+    timeQueue->addTimer(this);
     start=true;
     //开启监听
     channel_->enableReading();
 
-
 }
 void Timer::readcallback(int x)
 {
+    int64_t i=0;
+
+    read(timeFd,&i, sizeof(i));
     index_++;
     timerCallback_();
     if(index_==NumofTimes)
@@ -58,7 +65,7 @@ void Timer::stop()
     int ret=timerfd_settime(timeFd,0,&TimerSpec,0);
     ::close(timeFd);
     TimeQueue * timeQueue=TimeQueue::getTimeQueue();
-    timeQueue->deleteTimer(timerPrt.reset(this));
+    timeQueue->deleteTimer(this);
 }
 
 int Timer::get_fd()

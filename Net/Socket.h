@@ -15,9 +15,10 @@ class Socket : Mboost::noncopyable {
 
 public:
     explicit Socket(sockaddr_in &addr);
+    Socket(char *ip,int port);
     Socket(int fd);
     ~Socket();
-
+    void init(sockaddr_in &addr);
     void bind();
 
     void Connect();

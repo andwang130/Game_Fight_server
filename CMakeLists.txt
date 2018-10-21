@@ -50,7 +50,8 @@ add_executable(FightServer main.cpp
         dbinteface/dbBase.cpp
         config.cpp
         Net/TimeQueue.cpp
-        Net/Timer.cpp)
+        Net/Timer.cpp
+        Net/Tcpclient.cpp)
 target_link_libraries(FightServer libmysqlpp.so)#会在lib路径找到
 
 target_link_libraries(FightServer ${PROTOBUF_LIBRARIES})

@@ -6,13 +6,17 @@
 #include "intermediary.h"
 #include "config.h"
 #include "Model/DataBase.h"
+#include "Net/Timer.h"
+#include "Net/Tcpclient.h"
 using namespace std;
 using namespace ZL;
 using namespace ZL::Net;
+
 class test
 {
 public:
-    test(Eventloop *loop,inetAddress &address,std::string name):tcpServer(new TcpServer(loop,address,name))
+    test(Eventloop *loop,inetAddress &address,std::string name):tcpServer(new TcpServer(loop,address,name)),
+                                                                loop_(loop)
     {
         tcpServer->set_MessageCallback(std::bind(&test::on_meassgcallback,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3));
         tcpServer->set_ConnectionCallback(std::bind(&test::on_cooncallback,this,std::placeholders::_1));
@@ -23,9 +27,11 @@ public:
     {
         tcpServer->set_threadnumber(4);
         tcpServer->start();
+
     }
 
 private:
+
 
     //断开连接回调函数
     void on_removeCallback(const TcpcoontionPrt &coon)
@@ -42,22 +48,27 @@ private:
     void on_meassgcallback(const TcpcoontionPrt &coon,Buffer*buffer,int m)
     {
         protocol_ aProtocol;
-        if(buffer->readableBytes()>=13)
-        {
-            int8_t types=buffer->readInt8();
-            int32_t len=buffer->readInt32();
-            aProtocol.model=buffer->readInt16();
-            aProtocol.model2=buffer->readInt16();
-            aProtocol.coomd=buffer->readInt32();
-            cout<<"body长度"<<len<<endl;
-            cout<<"缓存区长度"<<buffer->readableBytes()<<endl;
-            if(buffer->readableBytes()>=len)
-            {
+        while (true) {
+            if (buffer->readableBytes() >= 13) {
+                int8_t types = buffer->readInt8();
+                int32_t len = buffer->readInt32();
+                aProtocol.model = buffer->readInt16();
+                aProtocol.model2 = buffer->readInt16();
+                aProtocol.coomd = buffer->readInt32();
+                cout << "body长度" << len << endl;
+                cout << "缓存区长度" << buffer->readableBytes() << endl;
+                if (buffer->readableBytes() >= len) {
 
-                aProtocol.data=buffer->retrieveAsString(len);
-                buffer->shrink(0);
-                intermeadiary(coon,aProtocol);
+                    aProtocol.data = buffer->retrieveAsString(len);
+                    buffer->shrink(0);
+                    intermeadiary(coon, aProtocol);
+                } else {
+                    //没有读取到消息，回退13个字节
+                    buffer->retrieve(-13);
+                    break;
+                }
             }
+            else { break; }
         }
 
 
@@ -73,9 +84,9 @@ private:
     {
 
     }
+    Eventloop *loop_;
     std::shared_ptr<TcpServer> tcpServer;
 };
-
 int main() {
 
     std::cout << "Hello, World!" << std::endl;

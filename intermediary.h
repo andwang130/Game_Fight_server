@@ -14,6 +14,7 @@ using namespace ZL;
 using namespace ZL::Net;
 inline void intermeadiary(const TcpcoontionPrt connprt,protocol_ &aProtocol_)
 {
+    std::cout<<aProtocol_.data<<std::endl;
     switch (aProtocol_.model)
     {
 

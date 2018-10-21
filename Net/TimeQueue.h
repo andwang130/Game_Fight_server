@@ -4,7 +4,6 @@
 
 #ifndef NET__TIMEQUEUE_H
 #define NET__TIMEQUEUE_H
-#include "Timer.h"
 #include <sys/epoll.h>
 #include <map>
 #include <memory>
@@ -12,14 +11,15 @@
 #include <vector>
 #include <thread>
 //定时任务队列
+class Timer;
 typedef std::shared_ptr<Timer> timerPrt;
-typedef std::map<int,timerPrt> timermMap;
+typedef std::map<int,Timer *> timermMap;
 class TimeQueue {
 public:
     static TimeQueue * getTimeQueue();
     ~TimeQueue();
-    void addTimer(const timerPrt &timer);
-    void deleteTimer(const timerPrt &timer);
+    void addTimer(Timer * timer);
+    void deleteTimer(Timer * timer);
 private:
     std::mutex mutex_;
     TimeQueue();

@@ -132,11 +132,23 @@ void Tcpcoonetion::shutdownInLoop()
 }
 void Tcpcoonetion::sendloop( const StringPiece &message)
 {
-    sendInLoop(message.data(),message.size());
+    if(loop_->isInLoopThread()) {
+        sendInLoop(message.data(), message.size());
+    }
+    else
+    {
+        loop_->runinLoop(std::bind(&Tcpcoonetion::sendInLoop,this,message.data(),message.size()));
+    }
 }
 void Tcpcoonetion::sendloop(const  std::string &message)
 {
-    sendInLoop(message.data(),message.size());
+    if(loop_->isInLoopThread()) {
+        sendInLoop(message.data(), message.size());
+    }
+    else
+    {
+        loop_->runinLoop(std::bind(&Tcpcoonetion::sendInLoop,this,message.data(),message.size()));
+    }
 }
 
 

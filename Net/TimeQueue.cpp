@@ -7,6 +7,7 @@
 #include <sys/socket.h>
 #include <string.h>
 #include <errno.h>
+#include "Timer.h"
 TimeQueue * TimeQueue::timeQueue_= nullptr;
 TimeQueue::TimeQueue()
 {
@@ -17,7 +18,7 @@ TimeQueue::~TimeQueue()
 {
 
 }
-void TimeQueue::addTimer(const timerPrt &timer)
+void TimeQueue::addTimer(Timer *timer)
 {
 
     {
@@ -31,7 +32,7 @@ void TimeQueue::addTimer(const timerPrt &timer)
 
 }
 
-void TimeQueue::deleteTimer(const timerPrt &timer)
+void TimeQueue::deleteTimer(Timer * timer)
 {
     {
         std::lock_guard<std::mutex> lk(mutex_);
