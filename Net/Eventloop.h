@@ -11,6 +11,7 @@
 #include <mutex>
 #include <functional>
 #include "Epollpoller.h"
+#include <thread>
 namespace ZL {
 namespace Net {
 class Channel;
@@ -63,7 +64,7 @@ private:
     std::shared_ptr<Channel> wakeupChannel_;//文件描述符对应的Channel
     bool looping_;//是否处于loop状态
     bool eventHandling_;  //是否在执行回调事件状态
-    const pid_t threadId_;
+    const std::thread::id threadId_;
     bool callingPendingFunctors;  //任务队列执行状态
 
     std::vector<Channel *> channells;

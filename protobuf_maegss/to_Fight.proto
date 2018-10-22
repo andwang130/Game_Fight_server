@@ -1,0 +1,45 @@
+syntax="proto3";
+package to_Figth;
+
+//战场初始化
+message play
+{
+    string roleName=1; //名字
+    int32 ranks=2; //队伍
+    int32 index=3; //位置
+    int32 heroid=4;  //选择英雄
+}
+message Figth_init
+{
+    int32 roomid=1;
+    repeated play plays=2;
+
+}
+
+
+message Fight_play
+{
+
+    int32 index=1;
+    int32 play_id=2;
+
+}
+//初始化话完成返回信息
+message rq_Fight_init
+{
+
+    int32 Fight_id=1;
+    repeated Fight_play Fight_plays=2;
+    int32 roomid=3;
+    string ip=4;
+    int32 port=5;
+
+}
+//返回初始化信息给用户
+message rq_Fight_init_user
+{
+    int32 play_id=2;
+    string ip=4;
+    int32 port=5;
+    int32 Fight_id=1;
+}

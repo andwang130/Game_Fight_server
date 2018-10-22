@@ -11,6 +11,7 @@
 #include "Buffer.h"
 #include "Callbacks.h"
 #include "Eventloop.h"
+
 namespace ZL{
 namespace Net {
 class Channel;
@@ -19,7 +20,7 @@ class Tcpcoonetion:Mboost::noncopyable,public std::enable_shared_from_this<Tcpco
         {
 public:
     Tcpcoonetion(Eventloop *loop,int fd,std::string name);
-    void send();
+
     //设置回调函数
     void set_coonCallback(const ConnectionCallback &cb);
 
@@ -58,7 +59,8 @@ private:
 
 
     void shutdownInLoop();
-
+    void send_Piece(const StringPiece &message);
+    void send_string(const std::string &message);
     //每一个coonet都有一个Channel来连接Eventloop和epool
     std::shared_ptr<Channel> channel_;
     //该连接所属的Eventloop

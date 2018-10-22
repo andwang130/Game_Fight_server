@@ -56,87 +56,19 @@ struct protocol_
     }
 };
 
-namespace Login_model
-{
-   const short level1=1;  //一级指令
 
-    namespace  to_login
-    {
-       const short level2=1; //二级指令
-
-       namespace coomd
-       {
-           const int Login=1;  //三级 登录模块
-           const int Register=2;//注册模块
-
-       }
-    }
-}
-namespace role
-{
-    const short level1=2;
-    namespace roleinfo
-    {
-        const short level2=1;
-        namespace coomd
-        {
-            const int Getrole=1; //获得角色信息
-            const int Setrole=2;//修改角色信息
-
-            const int Addrole=3;//增加一个角色
-
-        }
-
-    }
-
-}
-namespace matching
-{
-    const short level1=3;
-    namespace matching_
-    {
-        const short level2=1;
-        namespace coomd
-        {
-            const int play=1; //开始匹配
-            const int confirm=2;//确认匹配
-
-        }
-
-    }
-}
-
-//选择英雄模块
-namespace selecthore
-{
-    const short level1=4;
-    namespace select
-    {
-        const short level2=1;
-        namespace coomd
-        {
-
-            const int into=1;//进入房间
-            const int gethero=2;
-            const int cilck=3; //点击了一个英雄
-            const int select=4;//选择一个英雄
-        }
-
-    }
-}
 //聊天模块
-namespace talk
+namespace Login_to_Fight
 {
-    const short level1=5;
+    const short level1=10;
     namespace send
     {
         const short level2=1;
         namespace coomd
         {
 
-            const int send_all=2; //发送给所有任
-            const int send_room=3; //发送到整个房间
-            const int send_tem=4; //发送给队友
+            const int Fight_init=1; //发送给所有任
+
         }
 
     }

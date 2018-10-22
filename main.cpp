@@ -8,6 +8,7 @@
 #include "Model/DataBase.h"
 #include "Net/Timer.h"
 #include "Net/Tcpclient.h"
+#include "Model/DataBase.h"
 using namespace std;
 using namespace ZL;
 using namespace ZL::Net;
@@ -88,7 +89,8 @@ private:
     std::shared_ptr<TcpServer> tcpServer;
 };
 int main() {
-
+    HeroData heroData;
+    heroData.init();
     std::cout << "Hello, World!" << std::endl;
     inetAddress address("0.0.0.0",8081);
     Eventloop loop;

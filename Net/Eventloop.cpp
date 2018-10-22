@@ -27,7 +27,7 @@ Eventloop::Eventloop():poller(new Epollpoller()),
                        quit_(false),
                        looping_(false),
                        callingPendingFunctors(false),
-                       threadId_(CurrentThread::tid()),
+                       threadId_(std::this_thread::get_id()),
                        currentActiveChannel_(nullptr),
                        eventHandling_(false),
                        wakeupFd_(createEventfd()),
@@ -94,7 +94,7 @@ void Eventloop::removeChannel(Channel *channel)
 }
 bool Eventloop::isInLoopThread() const
 {
-    return threadId_==CurrentThread::tid();
+    return threadId_==std::this_thread::get_id();
 }
 
 void Eventloop::runinLoop(const Functor &cb) {

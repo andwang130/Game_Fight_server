@@ -51,7 +51,17 @@ add_executable(FightServer main.cpp
         config.cpp
         Net/TimeQueue.cpp
         Net/Timer.cpp
-        Net/Tcpclient.cpp)
+        Net/Tcpclient.cpp
+        Handler/BaseHandler.cpp
+        Handler/Figth_initHandler.cpp
+        protobuf_maegss/to_Fight.pb.cc
+        Model/DataBase.cpp
+        Model/AbsFight.cpp
+        Model/Figth.cpp
+        Model/FightBuild.cpp
+        Model/Hero.cpp
+        Model/Skills.cpp
+        Model/Fightplay.cpp)
 target_link_libraries(FightServer libmysqlpp.so)#会在lib路径找到
 
 target_link_libraries(FightServer ${PROTOBUF_LIBRARIES})
