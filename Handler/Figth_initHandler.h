@@ -13,6 +13,9 @@ private:
 
     //战场初始化
     void init_fight();
+    void create_fight(int id);
+    prt_Fight_play play_init(int playid,int herid,std::string name);
+    prt_Fight_build tower_init(int id);
     int port;
     std::string ip;
 };

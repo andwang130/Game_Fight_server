@@ -11,8 +11,8 @@
 
 //建筑拥有减伤
 enum ModleType {
-    BUILD,  //建筑
-    HUMAN,  //生物
+    BUILD=1,  //建筑
+    HUMAN=2,  //生物
 };
 
 

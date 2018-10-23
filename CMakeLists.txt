@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(FightServer)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")#多线程需要的参数
 include_directories(/usr/include/mysql)
 
