@@ -55,7 +55,10 @@ void HeroData::create(int code,std::string name,int atkBase,int defBase,int hpBa
     hero.skills_=skills;
     Hero_map[code]=hero;
 }
+play_ids::play_ids()
+{
 
+}
 play_ids::play_ids(int fid,int pid):
 fightid_(fid),
 playid_(pid)
@@ -64,6 +67,10 @@ playid_(pid)
 }
 
 PlayFIghtData * PlayFIghtData::playFIghtData= new PlayFIghtData();
+PlayFIghtData::PlayFIghtData()
+{
+
+}
 PlayFIghtData *PlayFIghtData::get_PlayFIghtData()
 {
 
@@ -77,7 +84,8 @@ void PlayFIghtData::add_play(const CoonPrt coonPrt,int fightid,int playid)
     //使用独占锁，写锁操作
     std::unique_lock<std::shared_timed_mutex> lhs(mutex_, std::defer_lock);
 
-    play_id_map[coonPrt]=play_ids(fightid,playid);
+    play_ids play_ids1(fightid,playid);
+    play_id_map[coonPrt]=play_ids1;
 }
 play_ids PlayFIghtData::get_play(const CoonPrt coonPrt)
 {
@@ -106,6 +114,10 @@ void PlayFIghtData::remove_play(const CoonPrt coonPrt)
 
 
 FightData *FightData::fightData=new FightData();
+FightData::FightData()
+{
+
+}
 FightData * FightData::get_FightData()
 {
     return fightData;

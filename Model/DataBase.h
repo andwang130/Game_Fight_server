@@ -60,6 +60,7 @@ public:
 class play_ids
 {
 public:
+     play_ids();
      play_ids(int fid,int pid);
      int fightid_;
      int playid_;
@@ -72,7 +73,7 @@ private:
     std::map<CoonPrt,play_ids> play_id_map;
     static PlayFIghtData * playFIghtData;
 public:
-    PlayFIghtData *get_PlayFIghtData();
+    static PlayFIghtData *get_PlayFIghtData();
     void add_play(const CoonPrt coonPrt,int fightid,int playid);
     play_ids get_play(const CoonPrt coonPrt);
     void remove_play(const CoonPrt coonPrt);
@@ -87,9 +88,13 @@ private:
     static FightData *fightData;
     std::map<int,prt_fight> fight_map;
 public:
-    FightData * get_FightData();
+    static FightData * get_FightData();
     void add_fight(int id,prt_fight prt_fight1);
     prt_fight get_fight(int id);
     void remove_fight(int id);
 };
+
+
+
+
 #endif //LOGINSERVER_DATABSE_H

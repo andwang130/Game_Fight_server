@@ -73,6 +73,22 @@ namespace Login_to_Fight
 
     }
 }
+namespace play_init
+{
+    const short level1=11;
+    namespace send
+    {
+        const short level2=1;
+        namespace coomd
+        {
+            const int to_fight=1; //用户第一次进入战斗服务器，创建一个该连接对应的ID类
+            const int to_fight_code=2;  //ID类建立后的返回码
+
+            const int get_fight_info=3; //客户端请求获得战场信息
+        }
+
+    }
+}
 
 
 #endif //LOGINSERVER_COMMDS_H

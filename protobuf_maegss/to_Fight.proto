@@ -43,3 +43,83 @@ message rq_Fight_init_user
     int32 port=5;
     int32 Fight_id=1;
 }
+
+//用户信息初始化
+message play_inti
+{
+    int32 Fight_id=1;
+    int32 play_id=2;
+}
+
+
+
+
+
+message build
+{
+    int32 id=1; //在场景中的编号
+    int32 code=2; //模型编号
+    string name=3; //名称
+    int32  modleType=18;//类型
+    int32 hp=4;//当前血量
+    int32 maxhp=5;//最大血量
+    int32 mp=6;//当前蓝量
+    int32 maxmp=7;//最大蓝量
+    int32 atk=8;//攻击
+    int32 def=9;//防御
+    float speed=10;//移动速度
+    float aspee=11;//攻击速度
+    float arange=12;//攻击范围
+    float eyerange=13;//视野范围
+    bool born=14;//是否重生
+    int32 bornTime=15;//重生的时间
+    bool nottoatk=16;//是否会攻击
+    bool infrared=17;//是否反隐
+
+}
+message equ
+{
+    int32 id=1;
+}
+message skill
+{
+    int32 code=1;//唯一编号
+    int32 level=2;//等级
+    int32 nextLevle=9;//升级需要等级
+    int32 times=3;//冷却时间
+    float arange=4;//施法距离
+    string name=5;//技能名称
+    string info=6;//技能描述
+    int32  skilltarget=7;//作用目标
+    int32 skillType=8;//技能释放方式
+}
+message fplay
+{
+    int32 id=1; //在场景中的编号
+    int32 code=2; //模型编号
+    string name=3; //名称
+    int32  modleType=20;//类型
+    int32 hp=4;//当前血量
+    int32 maxhp=5;//最大血量
+    int32 mp=6;//当前蓝量
+    int32 maxmp=7;//最大蓝量
+    int32 atk=8;//攻击
+    int32 def=9;//防御
+    float speed=10;//移动速度
+    float aspee=11;//攻击速度
+    float arange=12;//攻击范围
+    float eyerange=13;//视野范围
+    int32 level=14;//等级
+    int32  exp=15; //经验
+    int32 free=16; //技能点
+    int32 money=17;//金钱
+    string rolename=21;//用户名称
+    repeated equ equs=18; //装备
+    repeated skill skills=19; //技能
+
+}
+message fight_info
+{
+    repeated fplay fplays=1;
+    repeated build builds=2;
+}

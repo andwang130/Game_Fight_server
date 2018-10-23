@@ -38,7 +38,7 @@ namespace protobuf_to_5fFight_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[5];
+  static const ::google::protobuf::internal::ParseTable schema[11];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -52,23 +52,47 @@ extern Fight_playDefaultTypeInternal _Fight_play_default_instance_;
 class Figth_init;
 class Figth_initDefaultTypeInternal;
 extern Figth_initDefaultTypeInternal _Figth_init_default_instance_;
+class build;
+class buildDefaultTypeInternal;
+extern buildDefaultTypeInternal _build_default_instance_;
+class equ;
+class equDefaultTypeInternal;
+extern equDefaultTypeInternal _equ_default_instance_;
+class fight_info;
+class fight_infoDefaultTypeInternal;
+extern fight_infoDefaultTypeInternal _fight_info_default_instance_;
+class fplay;
+class fplayDefaultTypeInternal;
+extern fplayDefaultTypeInternal _fplay_default_instance_;
 class play;
 class playDefaultTypeInternal;
 extern playDefaultTypeInternal _play_default_instance_;
+class play_inti;
+class play_intiDefaultTypeInternal;
+extern play_intiDefaultTypeInternal _play_inti_default_instance_;
 class rq_Fight_init;
 class rq_Fight_initDefaultTypeInternal;
 extern rq_Fight_initDefaultTypeInternal _rq_Fight_init_default_instance_;
 class rq_Fight_init_user;
 class rq_Fight_init_userDefaultTypeInternal;
 extern rq_Fight_init_userDefaultTypeInternal _rq_Fight_init_user_default_instance_;
+class skill;
+class skillDefaultTypeInternal;
+extern skillDefaultTypeInternal _skill_default_instance_;
 }  // namespace to_Figth
 namespace google {
 namespace protobuf {
 template<> ::to_Figth::Fight_play* Arena::CreateMaybeMessage<::to_Figth::Fight_play>(Arena*);
 template<> ::to_Figth::Figth_init* Arena::CreateMaybeMessage<::to_Figth::Figth_init>(Arena*);
+template<> ::to_Figth::build* Arena::CreateMaybeMessage<::to_Figth::build>(Arena*);
+template<> ::to_Figth::equ* Arena::CreateMaybeMessage<::to_Figth::equ>(Arena*);
+template<> ::to_Figth::fight_info* Arena::CreateMaybeMessage<::to_Figth::fight_info>(Arena*);
+template<> ::to_Figth::fplay* Arena::CreateMaybeMessage<::to_Figth::fplay>(Arena*);
 template<> ::to_Figth::play* Arena::CreateMaybeMessage<::to_Figth::play>(Arena*);
+template<> ::to_Figth::play_inti* Arena::CreateMaybeMessage<::to_Figth::play_inti>(Arena*);
 template<> ::to_Figth::rq_Fight_init* Arena::CreateMaybeMessage<::to_Figth::rq_Fight_init>(Arena*);
 template<> ::to_Figth::rq_Fight_init_user* Arena::CreateMaybeMessage<::to_Figth::rq_Fight_init_user>(Arena*);
+template<> ::to_Figth::skill* Arena::CreateMaybeMessage<::to_Figth::skill>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace to_Figth {
@@ -708,6 +732,1017 @@ class rq_Fight_init_user : public ::google::protobuf::Message /* @@protoc_insert
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class play_inti : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:to_Figth.play_inti) */ {
+ public:
+  play_inti();
+  virtual ~play_inti();
+
+  play_inti(const play_inti& from);
+
+  inline play_inti& operator=(const play_inti& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  play_inti(play_inti&& from) noexcept
+    : play_inti() {
+    *this = ::std::move(from);
+  }
+
+  inline play_inti& operator=(play_inti&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const play_inti& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const play_inti* internal_default_instance() {
+    return reinterpret_cast<const play_inti*>(
+               &_play_inti_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(play_inti* other);
+  friend void swap(play_inti& a, play_inti& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline play_inti* New() const final {
+    return CreateMaybeMessage<play_inti>(NULL);
+  }
+
+  play_inti* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<play_inti>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const play_inti& from);
+  void MergeFrom(const play_inti& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(play_inti* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 Fight_id = 1;
+  void clear_fight_id();
+  static const int kFightIdFieldNumber = 1;
+  ::google::protobuf::int32 fight_id() const;
+  void set_fight_id(::google::protobuf::int32 value);
+
+  // int32 play_id = 2;
+  void clear_play_id();
+  static const int kPlayIdFieldNumber = 2;
+  ::google::protobuf::int32 play_id() const;
+  void set_play_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:to_Figth.play_inti)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 fight_id_;
+  ::google::protobuf::int32 play_id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class build : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:to_Figth.build) */ {
+ public:
+  build();
+  virtual ~build();
+
+  build(const build& from);
+
+  inline build& operator=(const build& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  build(build&& from) noexcept
+    : build() {
+    *this = ::std::move(from);
+  }
+
+  inline build& operator=(build&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const build& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const build* internal_default_instance() {
+    return reinterpret_cast<const build*>(
+               &_build_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(build* other);
+  friend void swap(build& a, build& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline build* New() const final {
+    return CreateMaybeMessage<build>(NULL);
+  }
+
+  build* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<build>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const build& from);
+  void MergeFrom(const build& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(build* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 3;
+  void clear_name();
+  static const int kNameFieldNumber = 3;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // int32 id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // int32 code = 2;
+  void clear_code();
+  static const int kCodeFieldNumber = 2;
+  ::google::protobuf::int32 code() const;
+  void set_code(::google::protobuf::int32 value);
+
+  // int32 hp = 4;
+  void clear_hp();
+  static const int kHpFieldNumber = 4;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // int32 maxhp = 5;
+  void clear_maxhp();
+  static const int kMaxhpFieldNumber = 5;
+  ::google::protobuf::int32 maxhp() const;
+  void set_maxhp(::google::protobuf::int32 value);
+
+  // int32 mp = 6;
+  void clear_mp();
+  static const int kMpFieldNumber = 6;
+  ::google::protobuf::int32 mp() const;
+  void set_mp(::google::protobuf::int32 value);
+
+  // int32 maxmp = 7;
+  void clear_maxmp();
+  static const int kMaxmpFieldNumber = 7;
+  ::google::protobuf::int32 maxmp() const;
+  void set_maxmp(::google::protobuf::int32 value);
+
+  // int32 atk = 8;
+  void clear_atk();
+  static const int kAtkFieldNumber = 8;
+  ::google::protobuf::int32 atk() const;
+  void set_atk(::google::protobuf::int32 value);
+
+  // int32 def = 9;
+  void clear_def();
+  static const int kDefFieldNumber = 9;
+  ::google::protobuf::int32 def() const;
+  void set_def(::google::protobuf::int32 value);
+
+  // float speed = 10;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 10;
+  float speed() const;
+  void set_speed(float value);
+
+  // float aspee = 11;
+  void clear_aspee();
+  static const int kAspeeFieldNumber = 11;
+  float aspee() const;
+  void set_aspee(float value);
+
+  // float arange = 12;
+  void clear_arange();
+  static const int kArangeFieldNumber = 12;
+  float arange() const;
+  void set_arange(float value);
+
+  // float eyerange = 13;
+  void clear_eyerange();
+  static const int kEyerangeFieldNumber = 13;
+  float eyerange() const;
+  void set_eyerange(float value);
+
+  // int32 bornTime = 15;
+  void clear_borntime();
+  static const int kBornTimeFieldNumber = 15;
+  ::google::protobuf::int32 borntime() const;
+  void set_borntime(::google::protobuf::int32 value);
+
+  // bool born = 14;
+  void clear_born();
+  static const int kBornFieldNumber = 14;
+  bool born() const;
+  void set_born(bool value);
+
+  // bool nottoatk = 16;
+  void clear_nottoatk();
+  static const int kNottoatkFieldNumber = 16;
+  bool nottoatk() const;
+  void set_nottoatk(bool value);
+
+  // bool infrared = 17;
+  void clear_infrared();
+  static const int kInfraredFieldNumber = 17;
+  bool infrared() const;
+  void set_infrared(bool value);
+
+  // int32 modleType = 18;
+  void clear_modletype();
+  static const int kModleTypeFieldNumber = 18;
+  ::google::protobuf::int32 modletype() const;
+  void set_modletype(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:to_Figth.build)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::int32 id_;
+  ::google::protobuf::int32 code_;
+  ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 maxhp_;
+  ::google::protobuf::int32 mp_;
+  ::google::protobuf::int32 maxmp_;
+  ::google::protobuf::int32 atk_;
+  ::google::protobuf::int32 def_;
+  float speed_;
+  float aspee_;
+  float arange_;
+  float eyerange_;
+  ::google::protobuf::int32 borntime_;
+  bool born_;
+  bool nottoatk_;
+  bool infrared_;
+  ::google::protobuf::int32 modletype_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class equ : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:to_Figth.equ) */ {
+ public:
+  equ();
+  virtual ~equ();
+
+  equ(const equ& from);
+
+  inline equ& operator=(const equ& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  equ(equ&& from) noexcept
+    : equ() {
+    *this = ::std::move(from);
+  }
+
+  inline equ& operator=(equ&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const equ& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const equ* internal_default_instance() {
+    return reinterpret_cast<const equ*>(
+               &_equ_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(equ* other);
+  friend void swap(equ& a, equ& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline equ* New() const final {
+    return CreateMaybeMessage<equ>(NULL);
+  }
+
+  equ* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<equ>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const equ& from);
+  void MergeFrom(const equ& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(equ* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:to_Figth.equ)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class skill : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:to_Figth.skill) */ {
+ public:
+  skill();
+  virtual ~skill();
+
+  skill(const skill& from);
+
+  inline skill& operator=(const skill& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  skill(skill&& from) noexcept
+    : skill() {
+    *this = ::std::move(from);
+  }
+
+  inline skill& operator=(skill&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const skill& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const skill* internal_default_instance() {
+    return reinterpret_cast<const skill*>(
+               &_skill_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(skill* other);
+  friend void swap(skill& a, skill& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline skill* New() const final {
+    return CreateMaybeMessage<skill>(NULL);
+  }
+
+  skill* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<skill>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const skill& from);
+  void MergeFrom(const skill& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(skill* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string name = 5;
+  void clear_name();
+  static const int kNameFieldNumber = 5;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // string info = 6;
+  void clear_info();
+  static const int kInfoFieldNumber = 6;
+  const ::std::string& info() const;
+  void set_info(const ::std::string& value);
+  #if LANG_CXX11
+  void set_info(::std::string&& value);
+  #endif
+  void set_info(const char* value);
+  void set_info(const char* value, size_t size);
+  ::std::string* mutable_info();
+  ::std::string* release_info();
+  void set_allocated_info(::std::string* info);
+
+  // int32 code = 1;
+  void clear_code();
+  static const int kCodeFieldNumber = 1;
+  ::google::protobuf::int32 code() const;
+  void set_code(::google::protobuf::int32 value);
+
+  // int32 level = 2;
+  void clear_level();
+  static const int kLevelFieldNumber = 2;
+  ::google::protobuf::int32 level() const;
+  void set_level(::google::protobuf::int32 value);
+
+  // int32 times = 3;
+  void clear_times();
+  static const int kTimesFieldNumber = 3;
+  ::google::protobuf::int32 times() const;
+  void set_times(::google::protobuf::int32 value);
+
+  // float arange = 4;
+  void clear_arange();
+  static const int kArangeFieldNumber = 4;
+  float arange() const;
+  void set_arange(float value);
+
+  // int32 skilltarget = 7;
+  void clear_skilltarget();
+  static const int kSkilltargetFieldNumber = 7;
+  ::google::protobuf::int32 skilltarget() const;
+  void set_skilltarget(::google::protobuf::int32 value);
+
+  // int32 skillType = 8;
+  void clear_skilltype();
+  static const int kSkillTypeFieldNumber = 8;
+  ::google::protobuf::int32 skilltype() const;
+  void set_skilltype(::google::protobuf::int32 value);
+
+  // int32 nextLevle = 9;
+  void clear_nextlevle();
+  static const int kNextLevleFieldNumber = 9;
+  ::google::protobuf::int32 nextlevle() const;
+  void set_nextlevle(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:to_Figth.skill)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr info_;
+  ::google::protobuf::int32 code_;
+  ::google::protobuf::int32 level_;
+  ::google::protobuf::int32 times_;
+  float arange_;
+  ::google::protobuf::int32 skilltarget_;
+  ::google::protobuf::int32 skilltype_;
+  ::google::protobuf::int32 nextlevle_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class fplay : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:to_Figth.fplay) */ {
+ public:
+  fplay();
+  virtual ~fplay();
+
+  fplay(const fplay& from);
+
+  inline fplay& operator=(const fplay& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  fplay(fplay&& from) noexcept
+    : fplay() {
+    *this = ::std::move(from);
+  }
+
+  inline fplay& operator=(fplay&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const fplay& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const fplay* internal_default_instance() {
+    return reinterpret_cast<const fplay*>(
+               &_fplay_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  void Swap(fplay* other);
+  friend void swap(fplay& a, fplay& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline fplay* New() const final {
+    return CreateMaybeMessage<fplay>(NULL);
+  }
+
+  fplay* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<fplay>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const fplay& from);
+  void MergeFrom(const fplay& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(fplay* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .to_Figth.equ equs = 18;
+  int equs_size() const;
+  void clear_equs();
+  static const int kEqusFieldNumber = 18;
+  ::to_Figth::equ* mutable_equs(int index);
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::equ >*
+      mutable_equs();
+  const ::to_Figth::equ& equs(int index) const;
+  ::to_Figth::equ* add_equs();
+  const ::google::protobuf::RepeatedPtrField< ::to_Figth::equ >&
+      equs() const;
+
+  // repeated .to_Figth.skill skills = 19;
+  int skills_size() const;
+  void clear_skills();
+  static const int kSkillsFieldNumber = 19;
+  ::to_Figth::skill* mutable_skills(int index);
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::skill >*
+      mutable_skills();
+  const ::to_Figth::skill& skills(int index) const;
+  ::to_Figth::skill* add_skills();
+  const ::google::protobuf::RepeatedPtrField< ::to_Figth::skill >&
+      skills() const;
+
+  // string name = 3;
+  void clear_name();
+  static const int kNameFieldNumber = 3;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // string rolename = 21;
+  void clear_rolename();
+  static const int kRolenameFieldNumber = 21;
+  const ::std::string& rolename() const;
+  void set_rolename(const ::std::string& value);
+  #if LANG_CXX11
+  void set_rolename(::std::string&& value);
+  #endif
+  void set_rolename(const char* value);
+  void set_rolename(const char* value, size_t size);
+  ::std::string* mutable_rolename();
+  ::std::string* release_rolename();
+  void set_allocated_rolename(::std::string* rolename);
+
+  // int32 id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  ::google::protobuf::int32 id() const;
+  void set_id(::google::protobuf::int32 value);
+
+  // int32 code = 2;
+  void clear_code();
+  static const int kCodeFieldNumber = 2;
+  ::google::protobuf::int32 code() const;
+  void set_code(::google::protobuf::int32 value);
+
+  // int32 hp = 4;
+  void clear_hp();
+  static const int kHpFieldNumber = 4;
+  ::google::protobuf::int32 hp() const;
+  void set_hp(::google::protobuf::int32 value);
+
+  // int32 maxhp = 5;
+  void clear_maxhp();
+  static const int kMaxhpFieldNumber = 5;
+  ::google::protobuf::int32 maxhp() const;
+  void set_maxhp(::google::protobuf::int32 value);
+
+  // int32 mp = 6;
+  void clear_mp();
+  static const int kMpFieldNumber = 6;
+  ::google::protobuf::int32 mp() const;
+  void set_mp(::google::protobuf::int32 value);
+
+  // int32 maxmp = 7;
+  void clear_maxmp();
+  static const int kMaxmpFieldNumber = 7;
+  ::google::protobuf::int32 maxmp() const;
+  void set_maxmp(::google::protobuf::int32 value);
+
+  // int32 atk = 8;
+  void clear_atk();
+  static const int kAtkFieldNumber = 8;
+  ::google::protobuf::int32 atk() const;
+  void set_atk(::google::protobuf::int32 value);
+
+  // int32 def = 9;
+  void clear_def();
+  static const int kDefFieldNumber = 9;
+  ::google::protobuf::int32 def() const;
+  void set_def(::google::protobuf::int32 value);
+
+  // float speed = 10;
+  void clear_speed();
+  static const int kSpeedFieldNumber = 10;
+  float speed() const;
+  void set_speed(float value);
+
+  // float aspee = 11;
+  void clear_aspee();
+  static const int kAspeeFieldNumber = 11;
+  float aspee() const;
+  void set_aspee(float value);
+
+  // float arange = 12;
+  void clear_arange();
+  static const int kArangeFieldNumber = 12;
+  float arange() const;
+  void set_arange(float value);
+
+  // float eyerange = 13;
+  void clear_eyerange();
+  static const int kEyerangeFieldNumber = 13;
+  float eyerange() const;
+  void set_eyerange(float value);
+
+  // int32 level = 14;
+  void clear_level();
+  static const int kLevelFieldNumber = 14;
+  ::google::protobuf::int32 level() const;
+  void set_level(::google::protobuf::int32 value);
+
+  // int32 exp = 15;
+  void clear_exp();
+  static const int kExpFieldNumber = 15;
+  ::google::protobuf::int32 exp() const;
+  void set_exp(::google::protobuf::int32 value);
+
+  // int32 free = 16;
+  void clear_free();
+  static const int kFreeFieldNumber = 16;
+  ::google::protobuf::int32 free() const;
+  void set_free(::google::protobuf::int32 value);
+
+  // int32 money = 17;
+  void clear_money();
+  static const int kMoneyFieldNumber = 17;
+  ::google::protobuf::int32 money() const;
+  void set_money(::google::protobuf::int32 value);
+
+  // int32 modleType = 20;
+  void clear_modletype();
+  static const int kModleTypeFieldNumber = 20;
+  ::google::protobuf::int32 modletype() const;
+  void set_modletype(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:to_Figth.fplay)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::equ > equs_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::skill > skills_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr rolename_;
+  ::google::protobuf::int32 id_;
+  ::google::protobuf::int32 code_;
+  ::google::protobuf::int32 hp_;
+  ::google::protobuf::int32 maxhp_;
+  ::google::protobuf::int32 mp_;
+  ::google::protobuf::int32 maxmp_;
+  ::google::protobuf::int32 atk_;
+  ::google::protobuf::int32 def_;
+  float speed_;
+  float aspee_;
+  float arange_;
+  float eyerange_;
+  ::google::protobuf::int32 level_;
+  ::google::protobuf::int32 exp_;
+  ::google::protobuf::int32 free_;
+  ::google::protobuf::int32 money_;
+  ::google::protobuf::int32 modletype_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class fight_info : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:to_Figth.fight_info) */ {
+ public:
+  fight_info();
+  virtual ~fight_info();
+
+  fight_info(const fight_info& from);
+
+  inline fight_info& operator=(const fight_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  fight_info(fight_info&& from) noexcept
+    : fight_info() {
+    *this = ::std::move(from);
+  }
+
+  inline fight_info& operator=(fight_info&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const fight_info& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const fight_info* internal_default_instance() {
+    return reinterpret_cast<const fight_info*>(
+               &_fight_info_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(fight_info* other);
+  friend void swap(fight_info& a, fight_info& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline fight_info* New() const final {
+    return CreateMaybeMessage<fight_info>(NULL);
+  }
+
+  fight_info* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<fight_info>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const fight_info& from);
+  void MergeFrom(const fight_info& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(fight_info* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .to_Figth.fplay fplays = 1;
+  int fplays_size() const;
+  void clear_fplays();
+  static const int kFplaysFieldNumber = 1;
+  ::to_Figth::fplay* mutable_fplays(int index);
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >*
+      mutable_fplays();
+  const ::to_Figth::fplay& fplays(int index) const;
+  ::to_Figth::fplay* add_fplays();
+  const ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >&
+      fplays() const;
+
+  // repeated .to_Figth.build builds = 2;
+  int builds_size() const;
+  void clear_builds();
+  static const int kBuildsFieldNumber = 2;
+  ::to_Figth::build* mutable_builds(int index);
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::build >*
+      mutable_builds();
+  const ::to_Figth::build& builds(int index) const;
+  ::to_Figth::build* add_builds();
+  const ::google::protobuf::RepeatedPtrField< ::to_Figth::build >&
+      builds() const;
+
+  // @@protoc_insertion_point(class_scope:to_Figth.fight_info)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay > fplays_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::build > builds_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -1122,9 +2157,1046 @@ inline void rq_Fight_init_user::set_fight_id(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:to_Figth.rq_Fight_init_user.Fight_id)
 }
 
+// -------------------------------------------------------------------
+
+// play_inti
+
+// int32 Fight_id = 1;
+inline void play_inti::clear_fight_id() {
+  fight_id_ = 0;
+}
+inline ::google::protobuf::int32 play_inti::fight_id() const {
+  // @@protoc_insertion_point(field_get:to_Figth.play_inti.Fight_id)
+  return fight_id_;
+}
+inline void play_inti::set_fight_id(::google::protobuf::int32 value) {
+  
+  fight_id_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.play_inti.Fight_id)
+}
+
+// int32 play_id = 2;
+inline void play_inti::clear_play_id() {
+  play_id_ = 0;
+}
+inline ::google::protobuf::int32 play_inti::play_id() const {
+  // @@protoc_insertion_point(field_get:to_Figth.play_inti.play_id)
+  return play_id_;
+}
+inline void play_inti::set_play_id(::google::protobuf::int32 value) {
+  
+  play_id_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.play_inti.play_id)
+}
+
+// -------------------------------------------------------------------
+
+// build
+
+// int32 id = 1;
+inline void build::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 build::id() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.id)
+  return id_;
+}
+inline void build::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.id)
+}
+
+// int32 code = 2;
+inline void build::clear_code() {
+  code_ = 0;
+}
+inline ::google::protobuf::int32 build::code() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.code)
+  return code_;
+}
+inline void build::set_code(::google::protobuf::int32 value) {
+  
+  code_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.code)
+}
+
+// string name = 3;
+inline void build::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& build::name() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.name)
+  return name_.GetNoArena();
+}
+inline void build::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:to_Figth.build.name)
+}
+#if LANG_CXX11
+inline void build::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:to_Figth.build.name)
+}
+#endif
+inline void build::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:to_Figth.build.name)
+}
+inline void build::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:to_Figth.build.name)
+}
+inline ::std::string* build::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:to_Figth.build.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* build::release_name() {
+  // @@protoc_insertion_point(field_release:to_Figth.build.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void build::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:to_Figth.build.name)
+}
+
+// int32 modleType = 18;
+inline void build::clear_modletype() {
+  modletype_ = 0;
+}
+inline ::google::protobuf::int32 build::modletype() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.modleType)
+  return modletype_;
+}
+inline void build::set_modletype(::google::protobuf::int32 value) {
+  
+  modletype_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.modleType)
+}
+
+// int32 hp = 4;
+inline void build::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 build::hp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.hp)
+  return hp_;
+}
+inline void build::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.hp)
+}
+
+// int32 maxhp = 5;
+inline void build::clear_maxhp() {
+  maxhp_ = 0;
+}
+inline ::google::protobuf::int32 build::maxhp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.maxhp)
+  return maxhp_;
+}
+inline void build::set_maxhp(::google::protobuf::int32 value) {
+  
+  maxhp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.maxhp)
+}
+
+// int32 mp = 6;
+inline void build::clear_mp() {
+  mp_ = 0;
+}
+inline ::google::protobuf::int32 build::mp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.mp)
+  return mp_;
+}
+inline void build::set_mp(::google::protobuf::int32 value) {
+  
+  mp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.mp)
+}
+
+// int32 maxmp = 7;
+inline void build::clear_maxmp() {
+  maxmp_ = 0;
+}
+inline ::google::protobuf::int32 build::maxmp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.maxmp)
+  return maxmp_;
+}
+inline void build::set_maxmp(::google::protobuf::int32 value) {
+  
+  maxmp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.maxmp)
+}
+
+// int32 atk = 8;
+inline void build::clear_atk() {
+  atk_ = 0;
+}
+inline ::google::protobuf::int32 build::atk() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.atk)
+  return atk_;
+}
+inline void build::set_atk(::google::protobuf::int32 value) {
+  
+  atk_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.atk)
+}
+
+// int32 def = 9;
+inline void build::clear_def() {
+  def_ = 0;
+}
+inline ::google::protobuf::int32 build::def() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.def)
+  return def_;
+}
+inline void build::set_def(::google::protobuf::int32 value) {
+  
+  def_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.def)
+}
+
+// float speed = 10;
+inline void build::clear_speed() {
+  speed_ = 0;
+}
+inline float build::speed() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.speed)
+  return speed_;
+}
+inline void build::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.speed)
+}
+
+// float aspee = 11;
+inline void build::clear_aspee() {
+  aspee_ = 0;
+}
+inline float build::aspee() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.aspee)
+  return aspee_;
+}
+inline void build::set_aspee(float value) {
+  
+  aspee_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.aspee)
+}
+
+// float arange = 12;
+inline void build::clear_arange() {
+  arange_ = 0;
+}
+inline float build::arange() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.arange)
+  return arange_;
+}
+inline void build::set_arange(float value) {
+  
+  arange_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.arange)
+}
+
+// float eyerange = 13;
+inline void build::clear_eyerange() {
+  eyerange_ = 0;
+}
+inline float build::eyerange() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.eyerange)
+  return eyerange_;
+}
+inline void build::set_eyerange(float value) {
+  
+  eyerange_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.eyerange)
+}
+
+// bool born = 14;
+inline void build::clear_born() {
+  born_ = false;
+}
+inline bool build::born() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.born)
+  return born_;
+}
+inline void build::set_born(bool value) {
+  
+  born_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.born)
+}
+
+// int32 bornTime = 15;
+inline void build::clear_borntime() {
+  borntime_ = 0;
+}
+inline ::google::protobuf::int32 build::borntime() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.bornTime)
+  return borntime_;
+}
+inline void build::set_borntime(::google::protobuf::int32 value) {
+  
+  borntime_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.bornTime)
+}
+
+// bool nottoatk = 16;
+inline void build::clear_nottoatk() {
+  nottoatk_ = false;
+}
+inline bool build::nottoatk() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.nottoatk)
+  return nottoatk_;
+}
+inline void build::set_nottoatk(bool value) {
+  
+  nottoatk_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.nottoatk)
+}
+
+// bool infrared = 17;
+inline void build::clear_infrared() {
+  infrared_ = false;
+}
+inline bool build::infrared() const {
+  // @@protoc_insertion_point(field_get:to_Figth.build.infrared)
+  return infrared_;
+}
+inline void build::set_infrared(bool value) {
+  
+  infrared_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.build.infrared)
+}
+
+// -------------------------------------------------------------------
+
+// equ
+
+// int32 id = 1;
+inline void equ::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 equ::id() const {
+  // @@protoc_insertion_point(field_get:to_Figth.equ.id)
+  return id_;
+}
+inline void equ::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.equ.id)
+}
+
+// -------------------------------------------------------------------
+
+// skill
+
+// int32 code = 1;
+inline void skill::clear_code() {
+  code_ = 0;
+}
+inline ::google::protobuf::int32 skill::code() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.code)
+  return code_;
+}
+inline void skill::set_code(::google::protobuf::int32 value) {
+  
+  code_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.code)
+}
+
+// int32 level = 2;
+inline void skill::clear_level() {
+  level_ = 0;
+}
+inline ::google::protobuf::int32 skill::level() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.level)
+  return level_;
+}
+inline void skill::set_level(::google::protobuf::int32 value) {
+  
+  level_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.level)
+}
+
+// int32 nextLevle = 9;
+inline void skill::clear_nextlevle() {
+  nextlevle_ = 0;
+}
+inline ::google::protobuf::int32 skill::nextlevle() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.nextLevle)
+  return nextlevle_;
+}
+inline void skill::set_nextlevle(::google::protobuf::int32 value) {
+  
+  nextlevle_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.nextLevle)
+}
+
+// int32 times = 3;
+inline void skill::clear_times() {
+  times_ = 0;
+}
+inline ::google::protobuf::int32 skill::times() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.times)
+  return times_;
+}
+inline void skill::set_times(::google::protobuf::int32 value) {
+  
+  times_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.times)
+}
+
+// float arange = 4;
+inline void skill::clear_arange() {
+  arange_ = 0;
+}
+inline float skill::arange() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.arange)
+  return arange_;
+}
+inline void skill::set_arange(float value) {
+  
+  arange_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.arange)
+}
+
+// string name = 5;
+inline void skill::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& skill::name() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.name)
+  return name_.GetNoArena();
+}
+inline void skill::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:to_Figth.skill.name)
+}
+#if LANG_CXX11
+inline void skill::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:to_Figth.skill.name)
+}
+#endif
+inline void skill::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:to_Figth.skill.name)
+}
+inline void skill::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:to_Figth.skill.name)
+}
+inline ::std::string* skill::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:to_Figth.skill.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* skill::release_name() {
+  // @@protoc_insertion_point(field_release:to_Figth.skill.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void skill::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:to_Figth.skill.name)
+}
+
+// string info = 6;
+inline void skill::clear_info() {
+  info_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& skill::info() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.info)
+  return info_.GetNoArena();
+}
+inline void skill::set_info(const ::std::string& value) {
+  
+  info_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:to_Figth.skill.info)
+}
+#if LANG_CXX11
+inline void skill::set_info(::std::string&& value) {
+  
+  info_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:to_Figth.skill.info)
+}
+#endif
+inline void skill::set_info(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  info_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:to_Figth.skill.info)
+}
+inline void skill::set_info(const char* value, size_t size) {
+  
+  info_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:to_Figth.skill.info)
+}
+inline ::std::string* skill::mutable_info() {
+  
+  // @@protoc_insertion_point(field_mutable:to_Figth.skill.info)
+  return info_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* skill::release_info() {
+  // @@protoc_insertion_point(field_release:to_Figth.skill.info)
+  
+  return info_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void skill::set_allocated_info(::std::string* info) {
+  if (info != NULL) {
+    
+  } else {
+    
+  }
+  info_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), info);
+  // @@protoc_insertion_point(field_set_allocated:to_Figth.skill.info)
+}
+
+// int32 skilltarget = 7;
+inline void skill::clear_skilltarget() {
+  skilltarget_ = 0;
+}
+inline ::google::protobuf::int32 skill::skilltarget() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.skilltarget)
+  return skilltarget_;
+}
+inline void skill::set_skilltarget(::google::protobuf::int32 value) {
+  
+  skilltarget_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.skilltarget)
+}
+
+// int32 skillType = 8;
+inline void skill::clear_skilltype() {
+  skilltype_ = 0;
+}
+inline ::google::protobuf::int32 skill::skilltype() const {
+  // @@protoc_insertion_point(field_get:to_Figth.skill.skillType)
+  return skilltype_;
+}
+inline void skill::set_skilltype(::google::protobuf::int32 value) {
+  
+  skilltype_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.skill.skillType)
+}
+
+// -------------------------------------------------------------------
+
+// fplay
+
+// int32 id = 1;
+inline void fplay::clear_id() {
+  id_ = 0;
+}
+inline ::google::protobuf::int32 fplay::id() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.id)
+  return id_;
+}
+inline void fplay::set_id(::google::protobuf::int32 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.id)
+}
+
+// int32 code = 2;
+inline void fplay::clear_code() {
+  code_ = 0;
+}
+inline ::google::protobuf::int32 fplay::code() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.code)
+  return code_;
+}
+inline void fplay::set_code(::google::protobuf::int32 value) {
+  
+  code_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.code)
+}
+
+// string name = 3;
+inline void fplay::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& fplay::name() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.name)
+  return name_.GetNoArena();
+}
+inline void fplay::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.name)
+}
+#if LANG_CXX11
+inline void fplay::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:to_Figth.fplay.name)
+}
+#endif
+inline void fplay::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:to_Figth.fplay.name)
+}
+inline void fplay::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:to_Figth.fplay.name)
+}
+inline ::std::string* fplay::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:to_Figth.fplay.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* fplay::release_name() {
+  // @@protoc_insertion_point(field_release:to_Figth.fplay.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void fplay::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:to_Figth.fplay.name)
+}
+
+// int32 modleType = 20;
+inline void fplay::clear_modletype() {
+  modletype_ = 0;
+}
+inline ::google::protobuf::int32 fplay::modletype() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.modleType)
+  return modletype_;
+}
+inline void fplay::set_modletype(::google::protobuf::int32 value) {
+  
+  modletype_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.modleType)
+}
+
+// int32 hp = 4;
+inline void fplay::clear_hp() {
+  hp_ = 0;
+}
+inline ::google::protobuf::int32 fplay::hp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.hp)
+  return hp_;
+}
+inline void fplay::set_hp(::google::protobuf::int32 value) {
+  
+  hp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.hp)
+}
+
+// int32 maxhp = 5;
+inline void fplay::clear_maxhp() {
+  maxhp_ = 0;
+}
+inline ::google::protobuf::int32 fplay::maxhp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.maxhp)
+  return maxhp_;
+}
+inline void fplay::set_maxhp(::google::protobuf::int32 value) {
+  
+  maxhp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.maxhp)
+}
+
+// int32 mp = 6;
+inline void fplay::clear_mp() {
+  mp_ = 0;
+}
+inline ::google::protobuf::int32 fplay::mp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.mp)
+  return mp_;
+}
+inline void fplay::set_mp(::google::protobuf::int32 value) {
+  
+  mp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.mp)
+}
+
+// int32 maxmp = 7;
+inline void fplay::clear_maxmp() {
+  maxmp_ = 0;
+}
+inline ::google::protobuf::int32 fplay::maxmp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.maxmp)
+  return maxmp_;
+}
+inline void fplay::set_maxmp(::google::protobuf::int32 value) {
+  
+  maxmp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.maxmp)
+}
+
+// int32 atk = 8;
+inline void fplay::clear_atk() {
+  atk_ = 0;
+}
+inline ::google::protobuf::int32 fplay::atk() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.atk)
+  return atk_;
+}
+inline void fplay::set_atk(::google::protobuf::int32 value) {
+  
+  atk_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.atk)
+}
+
+// int32 def = 9;
+inline void fplay::clear_def() {
+  def_ = 0;
+}
+inline ::google::protobuf::int32 fplay::def() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.def)
+  return def_;
+}
+inline void fplay::set_def(::google::protobuf::int32 value) {
+  
+  def_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.def)
+}
+
+// float speed = 10;
+inline void fplay::clear_speed() {
+  speed_ = 0;
+}
+inline float fplay::speed() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.speed)
+  return speed_;
+}
+inline void fplay::set_speed(float value) {
+  
+  speed_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.speed)
+}
+
+// float aspee = 11;
+inline void fplay::clear_aspee() {
+  aspee_ = 0;
+}
+inline float fplay::aspee() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.aspee)
+  return aspee_;
+}
+inline void fplay::set_aspee(float value) {
+  
+  aspee_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.aspee)
+}
+
+// float arange = 12;
+inline void fplay::clear_arange() {
+  arange_ = 0;
+}
+inline float fplay::arange() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.arange)
+  return arange_;
+}
+inline void fplay::set_arange(float value) {
+  
+  arange_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.arange)
+}
+
+// float eyerange = 13;
+inline void fplay::clear_eyerange() {
+  eyerange_ = 0;
+}
+inline float fplay::eyerange() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.eyerange)
+  return eyerange_;
+}
+inline void fplay::set_eyerange(float value) {
+  
+  eyerange_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.eyerange)
+}
+
+// int32 level = 14;
+inline void fplay::clear_level() {
+  level_ = 0;
+}
+inline ::google::protobuf::int32 fplay::level() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.level)
+  return level_;
+}
+inline void fplay::set_level(::google::protobuf::int32 value) {
+  
+  level_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.level)
+}
+
+// int32 exp = 15;
+inline void fplay::clear_exp() {
+  exp_ = 0;
+}
+inline ::google::protobuf::int32 fplay::exp() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.exp)
+  return exp_;
+}
+inline void fplay::set_exp(::google::protobuf::int32 value) {
+  
+  exp_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.exp)
+}
+
+// int32 free = 16;
+inline void fplay::clear_free() {
+  free_ = 0;
+}
+inline ::google::protobuf::int32 fplay::free() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.free)
+  return free_;
+}
+inline void fplay::set_free(::google::protobuf::int32 value) {
+  
+  free_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.free)
+}
+
+// int32 money = 17;
+inline void fplay::clear_money() {
+  money_ = 0;
+}
+inline ::google::protobuf::int32 fplay::money() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.money)
+  return money_;
+}
+inline void fplay::set_money(::google::protobuf::int32 value) {
+  
+  money_ = value;
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.money)
+}
+
+// string rolename = 21;
+inline void fplay::clear_rolename() {
+  rolename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& fplay::rolename() const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.rolename)
+  return rolename_.GetNoArena();
+}
+inline void fplay::set_rolename(const ::std::string& value) {
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:to_Figth.fplay.rolename)
+}
+#if LANG_CXX11
+inline void fplay::set_rolename(::std::string&& value) {
+  
+  rolename_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:to_Figth.fplay.rolename)
+}
+#endif
+inline void fplay::set_rolename(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:to_Figth.fplay.rolename)
+}
+inline void fplay::set_rolename(const char* value, size_t size) {
+  
+  rolename_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:to_Figth.fplay.rolename)
+}
+inline ::std::string* fplay::mutable_rolename() {
+  
+  // @@protoc_insertion_point(field_mutable:to_Figth.fplay.rolename)
+  return rolename_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* fplay::release_rolename() {
+  // @@protoc_insertion_point(field_release:to_Figth.fplay.rolename)
+  
+  return rolename_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void fplay::set_allocated_rolename(::std::string* rolename) {
+  if (rolename != NULL) {
+    
+  } else {
+    
+  }
+  rolename_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), rolename);
+  // @@protoc_insertion_point(field_set_allocated:to_Figth.fplay.rolename)
+}
+
+// repeated .to_Figth.equ equs = 18;
+inline int fplay::equs_size() const {
+  return equs_.size();
+}
+inline void fplay::clear_equs() {
+  equs_.Clear();
+}
+inline ::to_Figth::equ* fplay::mutable_equs(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fplay.equs)
+  return equs_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::to_Figth::equ >*
+fplay::mutable_equs() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fplay.equs)
+  return &equs_;
+}
+inline const ::to_Figth::equ& fplay::equs(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.equs)
+  return equs_.Get(index);
+}
+inline ::to_Figth::equ* fplay::add_equs() {
+  // @@protoc_insertion_point(field_add:to_Figth.fplay.equs)
+  return equs_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::equ >&
+fplay::equs() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fplay.equs)
+  return equs_;
+}
+
+// repeated .to_Figth.skill skills = 19;
+inline int fplay::skills_size() const {
+  return skills_.size();
+}
+inline void fplay::clear_skills() {
+  skills_.Clear();
+}
+inline ::to_Figth::skill* fplay::mutable_skills(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fplay.skills)
+  return skills_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::to_Figth::skill >*
+fplay::mutable_skills() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fplay.skills)
+  return &skills_;
+}
+inline const ::to_Figth::skill& fplay::skills(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fplay.skills)
+  return skills_.Get(index);
+}
+inline ::to_Figth::skill* fplay::add_skills() {
+  // @@protoc_insertion_point(field_add:to_Figth.fplay.skills)
+  return skills_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::skill >&
+fplay::skills() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fplay.skills)
+  return skills_;
+}
+
+// -------------------------------------------------------------------
+
+// fight_info
+
+// repeated .to_Figth.fplay fplays = 1;
+inline int fight_info::fplays_size() const {
+  return fplays_.size();
+}
+inline void fight_info::clear_fplays() {
+  fplays_.Clear();
+}
+inline ::to_Figth::fplay* fight_info::mutable_fplays(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.fplays)
+  return fplays_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >*
+fight_info::mutable_fplays() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.fplays)
+  return &fplays_;
+}
+inline const ::to_Figth::fplay& fight_info::fplays(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fight_info.fplays)
+  return fplays_.Get(index);
+}
+inline ::to_Figth::fplay* fight_info::add_fplays() {
+  // @@protoc_insertion_point(field_add:to_Figth.fight_info.fplays)
+  return fplays_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >&
+fight_info::fplays() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fight_info.fplays)
+  return fplays_;
+}
+
+// repeated .to_Figth.build builds = 2;
+inline int fight_info::builds_size() const {
+  return builds_.size();
+}
+inline void fight_info::clear_builds() {
+  builds_.Clear();
+}
+inline ::to_Figth::build* fight_info::mutable_builds(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.builds)
+  return builds_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::to_Figth::build >*
+fight_info::mutable_builds() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.builds)
+  return &builds_;
+}
+inline const ::to_Figth::build& fight_info::builds(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fight_info.builds)
+  return builds_.Get(index);
+}
+inline ::to_Figth::build* fight_info::add_builds() {
+  // @@protoc_insertion_point(field_add:to_Figth.fight_info.builds)
+  return builds_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::build >&
+fight_info::builds() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fight_info.builds)
+  return builds_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

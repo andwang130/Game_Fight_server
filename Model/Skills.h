@@ -30,6 +30,7 @@ class Skills {
 public:
     Skills();
     Skills(int code, int level,int nextLevle,int times,std::string name,std::string info,Skilltarget skilltarget,SkillType skillType);
+    int id;
     int code_;//唯一编号
     int level_;//等级
     int nextLevle_;//升级需要等级

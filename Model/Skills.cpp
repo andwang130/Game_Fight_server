@@ -15,3 +15,7 @@ Skills::Skills(int code, int level,int nextLevle,int times,std::string name,std:
     skillType_=skillType;
 
 }
+Skills::Skills()
+{
+
+}

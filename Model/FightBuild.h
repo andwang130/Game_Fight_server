@@ -13,7 +13,8 @@ class FightBuild: public AbsFight {
 
 public:
     FightBuild();
-    FightBuild(int id,int code,int hp,int atk_,int mp,int def_, float aspee, float arange, float eyerange);
+    FightBuild(int id, int code,std::string name, int hp, int atk, int mp, int def, float aspee, float arange,
+    float eyerange, bool infrared,bool nottoatk, bool born,int bornTime);
     bool born_;//是否重生
     int bornTime_;//重生的时间
     bool nottoatk_;//是否会攻击

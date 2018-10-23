@@ -19,7 +19,7 @@ public:
     std::string role_name;//用户名称
     std::vector<int >equs_;//装备
     std::vector<Skills> Skills_;//技能
-
+    int ranks;
 };
 
 
