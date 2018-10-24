@@ -1710,36 +1710,62 @@ class fight_info : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // repeated .to_Figth.fplay fplays = 1;
-  int fplays_size() const;
-  void clear_fplays();
-  static const int kFplaysFieldNumber = 1;
-  ::to_Figth::fplay* mutable_fplays(int index);
+  // repeated .to_Figth.fplay fplays_one = 1;
+  int fplays_one_size() const;
+  void clear_fplays_one();
+  static const int kFplaysOneFieldNumber = 1;
+  ::to_Figth::fplay* mutable_fplays_one(int index);
   ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >*
-      mutable_fplays();
-  const ::to_Figth::fplay& fplays(int index) const;
-  ::to_Figth::fplay* add_fplays();
+      mutable_fplays_one();
+  const ::to_Figth::fplay& fplays_one(int index) const;
+  ::to_Figth::fplay* add_fplays_one();
   const ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >&
-      fplays() const;
+      fplays_one() const;
 
-  // repeated .to_Figth.build builds = 2;
-  int builds_size() const;
-  void clear_builds();
-  static const int kBuildsFieldNumber = 2;
-  ::to_Figth::build* mutable_builds(int index);
+  // repeated .to_Figth.fplay fplays_tow = 2;
+  int fplays_tow_size() const;
+  void clear_fplays_tow();
+  static const int kFplaysTowFieldNumber = 2;
+  ::to_Figth::fplay* mutable_fplays_tow(int index);
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >*
+      mutable_fplays_tow();
+  const ::to_Figth::fplay& fplays_tow(int index) const;
+  ::to_Figth::fplay* add_fplays_tow();
+  const ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >&
+      fplays_tow() const;
+
+  // repeated .to_Figth.build builds_one = 3;
+  int builds_one_size() const;
+  void clear_builds_one();
+  static const int kBuildsOneFieldNumber = 3;
+  ::to_Figth::build* mutable_builds_one(int index);
   ::google::protobuf::RepeatedPtrField< ::to_Figth::build >*
-      mutable_builds();
-  const ::to_Figth::build& builds(int index) const;
-  ::to_Figth::build* add_builds();
+      mutable_builds_one();
+  const ::to_Figth::build& builds_one(int index) const;
+  ::to_Figth::build* add_builds_one();
   const ::google::protobuf::RepeatedPtrField< ::to_Figth::build >&
-      builds() const;
+      builds_one() const;
+
+  // repeated .to_Figth.build builds_tow = 4;
+  int builds_tow_size() const;
+  void clear_builds_tow();
+  static const int kBuildsTowFieldNumber = 4;
+  ::to_Figth::build* mutable_builds_tow(int index);
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::build >*
+      mutable_builds_tow();
+  const ::to_Figth::build& builds_tow(int index) const;
+  ::to_Figth::build* add_builds_tow();
+  const ::google::protobuf::RepeatedPtrField< ::to_Figth::build >&
+      builds_tow() const;
 
   // @@protoc_insertion_point(class_scope:to_Figth.fight_info)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay > fplays_;
-  ::google::protobuf::RepeatedPtrField< ::to_Figth::build > builds_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay > fplays_one_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay > fplays_tow_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::build > builds_one_;
+  ::google::protobuf::RepeatedPtrField< ::to_Figth::build > builds_tow_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_to_5fFight_2eproto::TableStruct;
 };
@@ -3122,64 +3148,124 @@ fplay::skills() const {
 
 // fight_info
 
-// repeated .to_Figth.fplay fplays = 1;
-inline int fight_info::fplays_size() const {
-  return fplays_.size();
+// repeated .to_Figth.fplay fplays_one = 1;
+inline int fight_info::fplays_one_size() const {
+  return fplays_one_.size();
 }
-inline void fight_info::clear_fplays() {
-  fplays_.Clear();
+inline void fight_info::clear_fplays_one() {
+  fplays_one_.Clear();
 }
-inline ::to_Figth::fplay* fight_info::mutable_fplays(int index) {
-  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.fplays)
-  return fplays_.Mutable(index);
+inline ::to_Figth::fplay* fight_info::mutable_fplays_one(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.fplays_one)
+  return fplays_one_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >*
-fight_info::mutable_fplays() {
-  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.fplays)
-  return &fplays_;
+fight_info::mutable_fplays_one() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.fplays_one)
+  return &fplays_one_;
 }
-inline const ::to_Figth::fplay& fight_info::fplays(int index) const {
-  // @@protoc_insertion_point(field_get:to_Figth.fight_info.fplays)
-  return fplays_.Get(index);
+inline const ::to_Figth::fplay& fight_info::fplays_one(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fight_info.fplays_one)
+  return fplays_one_.Get(index);
 }
-inline ::to_Figth::fplay* fight_info::add_fplays() {
-  // @@protoc_insertion_point(field_add:to_Figth.fight_info.fplays)
-  return fplays_.Add();
+inline ::to_Figth::fplay* fight_info::add_fplays_one() {
+  // @@protoc_insertion_point(field_add:to_Figth.fight_info.fplays_one)
+  return fplays_one_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >&
-fight_info::fplays() const {
-  // @@protoc_insertion_point(field_list:to_Figth.fight_info.fplays)
-  return fplays_;
+fight_info::fplays_one() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fight_info.fplays_one)
+  return fplays_one_;
 }
 
-// repeated .to_Figth.build builds = 2;
-inline int fight_info::builds_size() const {
-  return builds_.size();
+// repeated .to_Figth.fplay fplays_tow = 2;
+inline int fight_info::fplays_tow_size() const {
+  return fplays_tow_.size();
 }
-inline void fight_info::clear_builds() {
-  builds_.Clear();
+inline void fight_info::clear_fplays_tow() {
+  fplays_tow_.Clear();
 }
-inline ::to_Figth::build* fight_info::mutable_builds(int index) {
-  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.builds)
-  return builds_.Mutable(index);
+inline ::to_Figth::fplay* fight_info::mutable_fplays_tow(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.fplays_tow)
+  return fplays_tow_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >*
+fight_info::mutable_fplays_tow() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.fplays_tow)
+  return &fplays_tow_;
+}
+inline const ::to_Figth::fplay& fight_info::fplays_tow(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fight_info.fplays_tow)
+  return fplays_tow_.Get(index);
+}
+inline ::to_Figth::fplay* fight_info::add_fplays_tow() {
+  // @@protoc_insertion_point(field_add:to_Figth.fight_info.fplays_tow)
+  return fplays_tow_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::fplay >&
+fight_info::fplays_tow() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fight_info.fplays_tow)
+  return fplays_tow_;
+}
+
+// repeated .to_Figth.build builds_one = 3;
+inline int fight_info::builds_one_size() const {
+  return builds_one_.size();
+}
+inline void fight_info::clear_builds_one() {
+  builds_one_.Clear();
+}
+inline ::to_Figth::build* fight_info::mutable_builds_one(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.builds_one)
+  return builds_one_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::to_Figth::build >*
-fight_info::mutable_builds() {
-  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.builds)
-  return &builds_;
+fight_info::mutable_builds_one() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.builds_one)
+  return &builds_one_;
 }
-inline const ::to_Figth::build& fight_info::builds(int index) const {
-  // @@protoc_insertion_point(field_get:to_Figth.fight_info.builds)
-  return builds_.Get(index);
+inline const ::to_Figth::build& fight_info::builds_one(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fight_info.builds_one)
+  return builds_one_.Get(index);
 }
-inline ::to_Figth::build* fight_info::add_builds() {
-  // @@protoc_insertion_point(field_add:to_Figth.fight_info.builds)
-  return builds_.Add();
+inline ::to_Figth::build* fight_info::add_builds_one() {
+  // @@protoc_insertion_point(field_add:to_Figth.fight_info.builds_one)
+  return builds_one_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::build >&
-fight_info::builds() const {
-  // @@protoc_insertion_point(field_list:to_Figth.fight_info.builds)
-  return builds_;
+fight_info::builds_one() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fight_info.builds_one)
+  return builds_one_;
+}
+
+// repeated .to_Figth.build builds_tow = 4;
+inline int fight_info::builds_tow_size() const {
+  return builds_tow_.size();
+}
+inline void fight_info::clear_builds_tow() {
+  builds_tow_.Clear();
+}
+inline ::to_Figth::build* fight_info::mutable_builds_tow(int index) {
+  // @@protoc_insertion_point(field_mutable:to_Figth.fight_info.builds_tow)
+  return builds_tow_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::to_Figth::build >*
+fight_info::mutable_builds_tow() {
+  // @@protoc_insertion_point(field_mutable_list:to_Figth.fight_info.builds_tow)
+  return &builds_tow_;
+}
+inline const ::to_Figth::build& fight_info::builds_tow(int index) const {
+  // @@protoc_insertion_point(field_get:to_Figth.fight_info.builds_tow)
+  return builds_tow_.Get(index);
+}
+inline ::to_Figth::build* fight_info::add_builds_tow() {
+  // @@protoc_insertion_point(field_add:to_Figth.fight_info.builds_tow)
+  return builds_tow_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::to_Figth::build >&
+fight_info::builds_tow() const {
+  // @@protoc_insertion_point(field_list:to_Figth.fight_info.builds_tow)
+  return builds_tow_;
 }
 
 #ifdef __GNUC__

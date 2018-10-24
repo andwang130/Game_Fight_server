@@ -120,6 +120,9 @@ message fplay
 }
 message fight_info
 {
-    repeated fplay fplays=1;
-    repeated build builds=2;
+    repeated fplay fplays_one=1;
+     repeated fplay fplays_tow=2;
+
+    repeated build builds_one=3;
+     repeated build builds_tow=4;
 }

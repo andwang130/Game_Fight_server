@@ -385,8 +385,10 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::to_Figth::fight_info, fplays_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::to_Figth::fight_info, builds_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::to_Figth::fight_info, fplays_one_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::to_Figth::fight_info, fplays_tow_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::to_Figth::fight_info, builds_one_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::to_Figth::fight_info, builds_tow_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::to_Figth::play)},
@@ -468,12 +470,14 @@ void AddDescriptorsImpl() {
       "\030\r \001(\002\022\r\n\005level\030\016 \001(\005\022\013\n\003exp\030\017 \001(\005\022\014\n\004fr"
       "ee\030\020 \001(\005\022\r\n\005money\030\021 \001(\005\022\020\n\010rolename\030\025 \001("
       "\t\022\033\n\004equs\030\022 \003(\0132\r.to_Figth.equ\022\037\n\006skills"
-      "\030\023 \003(\0132\017.to_Figth.skill\"N\n\nfight_info\022\037\n"
-      "\006fplays\030\001 \003(\0132\017.to_Figth.fplay\022\037\n\006builds"
-      "\030\002 \003(\0132\017.to_Figth.buildb\006proto3"
+      "\030\023 \003(\0132\017.to_Figth.skill\"\240\001\n\nfight_info\022#"
+      "\n\nfplays_one\030\001 \003(\0132\017.to_Figth.fplay\022#\n\nf"
+      "plays_tow\030\002 \003(\0132\017.to_Figth.fplay\022#\n\nbuil"
+      "ds_one\030\003 \003(\0132\017.to_Figth.build\022#\n\nbuilds_"
+      "tow\030\004 \003(\0132\017.to_Figth.buildb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1351);
+      descriptor, 1434);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "to_Fight.proto", &protobuf_RegisterTypes);
 }
@@ -5050,8 +5054,10 @@ void fplay::InternalSwap(fplay* other) {
 void fight_info::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int fight_info::kFplaysFieldNumber;
-const int fight_info::kBuildsFieldNumber;
+const int fight_info::kFplaysOneFieldNumber;
+const int fight_info::kFplaysTowFieldNumber;
+const int fight_info::kBuildsOneFieldNumber;
+const int fight_info::kBuildsTowFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 fight_info::fight_info()
@@ -5064,8 +5070,10 @@ fight_info::fight_info()
 fight_info::fight_info(const fight_info& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
-      fplays_(from.fplays_),
-      builds_(from.builds_) {
+      fplays_one_(from.fplays_one_),
+      fplays_tow_(from.fplays_tow_),
+      builds_one_(from.builds_one_),
+      builds_tow_(from.builds_tow_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:to_Figth.fight_info)
 }
@@ -5101,8 +5109,10 @@ void fight_info::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  fplays_.Clear();
-  builds_.Clear();
+  fplays_one_.Clear();
+  fplays_tow_.Clear();
+  builds_one_.Clear();
+  builds_tow_.Clear();
   _internal_metadata_.Clear();
 }
 
@@ -5116,24 +5126,48 @@ bool fight_info::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .to_Figth.fplay fplays = 1;
+      // repeated .to_Figth.fplay fplays_one = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_fplays()));
+                input, add_fplays_one()));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // repeated .to_Figth.build builds = 2;
+      // repeated .to_Figth.fplay fplays_tow = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_builds()));
+                input, add_fplays_tow()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .to_Figth.build builds_one = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_builds_one()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .to_Figth.build builds_tow = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_builds_tow()));
         } else {
           goto handle_unusual;
         }
@@ -5166,21 +5200,39 @@ void fight_info::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .to_Figth.fplay fplays = 1;
+  // repeated .to_Figth.fplay fplays_one = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->fplays_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->fplays_one_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1,
-      this->fplays(static_cast<int>(i)),
+      this->fplays_one(static_cast<int>(i)),
       output);
   }
 
-  // repeated .to_Figth.build builds = 2;
+  // repeated .to_Figth.fplay fplays_tow = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->builds_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->fplays_tow_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       2,
-      this->builds(static_cast<int>(i)),
+      this->fplays_tow(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .to_Figth.build builds_one = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->builds_one_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3,
+      this->builds_one(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .to_Figth.build builds_tow = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->builds_tow_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4,
+      this->builds_tow(static_cast<int>(i)),
       output);
   }
 
@@ -5198,20 +5250,36 @@ void fight_info::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .to_Figth.fplay fplays = 1;
+  // repeated .to_Figth.fplay fplays_one = 1;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->fplays_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->fplays_one_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->fplays(static_cast<int>(i)), deterministic, target);
+        1, this->fplays_one(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .to_Figth.build builds = 2;
+  // repeated .to_Figth.fplay fplays_tow = 2;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->builds_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->fplays_tow_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->builds(static_cast<int>(i)), deterministic, target);
+        2, this->fplays_tow(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .to_Figth.build builds_one = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->builds_one_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->builds_one(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .to_Figth.build builds_tow = 4;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->builds_tow_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->builds_tow(static_cast<int>(i)), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -5231,25 +5299,47 @@ size_t fight_info::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // repeated .to_Figth.fplay fplays = 1;
+  // repeated .to_Figth.fplay fplays_one = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->fplays_size());
+    unsigned int count = static_cast<unsigned int>(this->fplays_one_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->fplays(static_cast<int>(i)));
+          this->fplays_one(static_cast<int>(i)));
     }
   }
 
-  // repeated .to_Figth.build builds = 2;
+  // repeated .to_Figth.fplay fplays_tow = 2;
   {
-    unsigned int count = static_cast<unsigned int>(this->builds_size());
+    unsigned int count = static_cast<unsigned int>(this->fplays_tow_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->builds(static_cast<int>(i)));
+          this->fplays_tow(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .to_Figth.build builds_one = 3;
+  {
+    unsigned int count = static_cast<unsigned int>(this->builds_one_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->builds_one(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .to_Figth.build builds_tow = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->builds_tow_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->builds_tow(static_cast<int>(i)));
     }
   }
 
@@ -5280,8 +5370,10 @@ void fight_info::MergeFrom(const fight_info& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  fplays_.MergeFrom(from.fplays_);
-  builds_.MergeFrom(from.builds_);
+  fplays_one_.MergeFrom(from.fplays_one_);
+  fplays_tow_.MergeFrom(from.fplays_tow_);
+  builds_one_.MergeFrom(from.builds_one_);
+  builds_tow_.MergeFrom(from.builds_tow_);
 }
 
 void fight_info::CopyFrom(const ::google::protobuf::Message& from) {
@@ -5308,8 +5400,10 @@ void fight_info::Swap(fight_info* other) {
 }
 void fight_info::InternalSwap(fight_info* other) {
   using std::swap;
-  CastToBase(&fplays_)->InternalSwap(CastToBase(&other->fplays_));
-  CastToBase(&builds_)->InternalSwap(CastToBase(&other->builds_));
+  CastToBase(&fplays_one_)->InternalSwap(CastToBase(&other->fplays_one_));
+  CastToBase(&fplays_tow_)->InternalSwap(CastToBase(&other->fplays_tow_));
+  CastToBase(&builds_one_)->InternalSwap(CastToBase(&other->builds_one_));
+  CastToBase(&builds_tow_)->InternalSwap(CastToBase(&other->builds_tow_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

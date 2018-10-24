@@ -15,7 +15,11 @@ SkillLeveData::SkillLeveData(int level,int times,int mp, float arange)
 void SkillsData::init()
 {
     std::vector<SkillLeveData> fw_skiill={SkillLeveData(1,30,100,300),SkillLeveData(3,50,150,300),SkillLeveData(7,70,200,300)};
-    create(0,"欺诈宝珠","消耗 65/70/75/80/85法力 \\n冷却7/7/7/7/7 \\n射程 880 \\n效果 阿狸放出宝珠，造成40/65/90/115/140(+0.35)魔法伤害，随后将其收回，造成40/65/90/115/140(+0.35)真实伤害。",Skilltarget::EH,SkillType::Position,fw_skiill);
+    create(1,"欺诈宝珠","消耗 65/70/75/80/85法力 \\n冷却7/7/7/7/7 \\n射程 880 \\n效果 阿狸放出宝珠，造成40/65/90/115/140(+0.35)魔法伤害，随后将其收回，造成40/65/90/115/140(+0.35)真实伤害。",Skilltarget::EH,SkillType::Position,fw_skiill);
+    create(2,"欺诈宝珠","消耗 65/70/75/80/85法力 \\n冷却7/7/7/7/7 \\n射程 880 \\n效果 阿狸放出宝珠，造成40/65/90/115/140(+0.35)魔法伤害，随后将其收回，造成40/65/90/115/140(+0.35)真实伤害。",Skilltarget::EH,SkillType::Position,fw_skiill);
+    create(3,"欺诈宝珠","消耗 65/70/75/80/85法力 \\n冷却7/7/7/7/7 \\n射程 880 \\n效果 阿狸放出宝珠，造成40/65/90/115/140(+0.35)魔法伤害，随后将其收回，造成40/65/90/115/140(+0.35)真实伤害。",Skilltarget::EH,SkillType::Position,fw_skiill);
+    create(4,"欺诈宝珠","消耗 65/70/75/80/85法力 \\n冷却7/7/7/7/7 \\n射程 880 \\n效果 阿狸放出宝珠，造成40/65/90/115/140(+0.35)魔法伤害，随后将其收回，造成40/65/90/115/140(+0.35)真实伤害。",Skilltarget::EH,SkillType::Position,fw_skiill);
+
 }
 void SkillsData::create(int code,std::string name,std::string info,Skilltarget skilltarget,SkillType  skillType,std::vector<SkillLeveData> skillLevedata)
 {
@@ -32,7 +36,10 @@ void SkillsData::create(int code,std::string name,std::string info,Skilltarget s
 
 void HeroData::init()
 {
-    create(0,"魅惑魔女",30,5,600,300,5,1,10,5,275,120,600,600,{1,2,3,4});
+    create(1,"魅惑魔女",30,5,600,300,5,1,10,5,275,120,600,600,{1,2,3,4});
+    create(2,"魅惑魔女",30,5,600,300,5,1,10,5,275,120,600,600,{1,2,3,4});
+    create(3,"魅惑魔女",30,5,600,300,5,1,10,5,275,120,600,600,{1,2,3,4});
+    create(4,"魅惑魔女",30,5,600,300,5,1,10,5,275,120,600,600,{1,2,3,4});
 }
 void HeroData::create(int code,std::string name,int atkBase,int defBase,int hpBase,int mpBase,int atkarr,int defarr,
             int hparr,int mparr, float speed, float aspeed, float arange, float eyerange,std::vector<int> skills)

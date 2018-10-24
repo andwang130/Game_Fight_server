@@ -6,6 +6,7 @@
 #define FIGHTSERVER_PLAYININTHANDELR_H
 
 #include "BaseHandler.h"
+#include "../protobuf_maegss/to_Fight.pb.h"
 class PlayinintHandelr: public BaseHandler {
 public:
     PlayinintHandelr(const CoonPrt &coonPrt,protocol_ &aProtoco);

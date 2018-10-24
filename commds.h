@@ -85,7 +85,7 @@ namespace play_init
             const int to_fight_code=2;  //ID类建立后的返回码
 
             const int get_fight_info=3; //客户端请求获得战场信息
-        }
+        }const int get_info_code=4; //客户端请求获得战场信息
 
     }
 }

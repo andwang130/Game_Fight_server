@@ -32,6 +32,11 @@ public:
     //CloseCallback调用
 
 private:
+
+    void clientwriteCompleteCallback(const TcpcoontionPrt & tcpcoontionPrt);
+    void clientconnectionCallback(const TcpcoontionPrt & tcpcoontionPrt);
+    void clientremoveCallback(const TcpcoontionPrt & tcpcoontionPrt);
+    void clientMessageCallback(const TcpcoontionPrt &tcpcoontionPrt, Buffer *buffer, int tiems);
     Eventloop *loop_;
     std::string name_;
     MessageCallback messageCallback_;

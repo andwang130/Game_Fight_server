@@ -3,7 +3,6 @@
 //
 
 #include "PlayinintHandelr.h"
-#include "../protobuf_maegss/to_Fight.pb.h"
 PlayinintHandelr::PlayinintHandelr(const CoonPrt &coonPrt, protocol_ &aProtoco):BaseHandler(coonPrt,aProtoco)
 {
 
@@ -35,7 +34,7 @@ void PlayinintHandelr::playtoFight()
 
     PlayFIghtData::get_PlayFIghtData()->add_play(coonPrt_,fightid,playid);
 
-    prt_fight fight=FightData::get_FightData()->get_fight();
+    prt_fight fight=FightData::get_FightData()->get_fight(fightid);
     if(fight== nullptr)
     { return;}
 
@@ -65,13 +64,13 @@ void PlayinintHandelr::playtoFight()
         std::unique_lock<std::shared_timed_mutex> lr(fight->mutex_,std::defer_lock);
         fight->plyas_[coonPrt_]=prt_play;
     }
-
-    tosend(11,1,play_init::send::coomd::to_fight_code,"");
+    std::string buf="";
+    tosend(11,1,play_init::send::coomd::to_fight_code,buf);
 }
-void getfigth()
+void PlayinintHandelr::getfigth()
 {
 
-    play_ids play_ids_=PlayFIghtData::get_PlayFIghtData()->get_play();
+    play_ids play_ids_=PlayFIghtData::get_PlayFIghtData()->get_play(coonPrt_);
     //返回的值是-1，不在当中，直接return
     if(play_ids_.fightid_==-1)
     {
@@ -83,10 +82,12 @@ void getfigth()
     if(fight== nullptr)
     { return;}
 
-    std::shared_lock<std::shared_timed_mutex> lr(fight,std::defer_lock);
+    std::shared_lock<std::shared_timed_mutex> lr(fight->mutex_,std::defer_lock);
     to_Figth::fight_info fight_info_;
     get_play(fight_info_,fight);
     get_build(fight_info_,fight);
+    std::string buf=fight_info_.SerializeAsString();
+    tosend(11,1,4,buf);
 }
 void PlayinintHandelr::get_play(to_Figth::fight_info &fight_info,prt_fight &prtFight)
 {
@@ -94,7 +95,7 @@ void PlayinintHandelr::get_play(to_Figth::fight_info &fight_info,prt_fight &prtF
     for(auto ite:prtFight->plyas_one)
     {
       prt_Fight_play play=ite.second;
-      to_Figth::fplay *fplay_=fight_info.add_fplays();
+      to_Figth::fplay *fplay_=fight_info.add_fplays_one();
       fplay_->set_id(play->id_);
       fplay_->set_hp(play->id_);
       fplay_->set_maxhp(play->maxhp_);
@@ -117,7 +118,7 @@ void PlayinintHandelr::get_play(to_Figth::fight_info &fight_info,prt_fight &prtF
           to_Figth::equ *equ_=fplay_->add_equs();
           equ_->set_id(play->equs_[i]);
       }
-      for(int i=0;i<play->Skills;i++)
+      for(int i=0;i<play->Skills_.size();i++)
       {
           to_Figth::skill *skill_=fplay_->add_skills();
           skill_->set_info(play->Skills_[i].info_);
@@ -136,7 +137,7 @@ void PlayinintHandelr::get_play(to_Figth::fight_info &fight_info,prt_fight &prtF
     {
 
         prt_Fight_play play=ite.second;
-        to_Figth::fplay *fplay_=fight_info.add_fplays();
+        to_Figth::fplay *fplay_=fight_info.add_fplays_tow();
         fplay_->set_id(play->id_);
         fplay_->set_hp(play->id_);
         fplay_->set_maxhp(play->maxhp_);
@@ -159,7 +160,7 @@ void PlayinintHandelr::get_play(to_Figth::fight_info &fight_info,prt_fight &prtF
             to_Figth::equ *equ_=fplay_->add_equs();
             equ_->set_id(play->equs_[i]);
         }
-        for(int i=0;i<play->Skills;i++)
+        for(int i=0;i<play->Skills_.size();i++)
         {
             to_Figth::skill *skill_=fplay_->add_skills();
             skill_->set_info(play->Skills_[i].info_);
@@ -179,13 +180,50 @@ void PlayinintHandelr::get_build(to_Figth::fight_info &fight_info,prt_fight &prt
     for(auto ite:prtFight->build_one)
     {
         prt_Fight_build fbuild=ite.second;
-        to_Figth::build *pbuild=fight_info.add_builds();
+        to_Figth::build *pbuild=fight_info.add_builds_one();
         pbuild->set_id(fbuild->id_);
         pbuild->set_code(fbuild->code_);
         pbuild->set_eyerange(fbuild->eyerange_);
+        pbuild->set_hp(fbuild->hp_);
+        pbuild->set_maxhp(fbuild->maxhp_);
+        pbuild->set_mp(fbuild->mp_);
+        pbuild->set_atk(fbuild->atk_);
+        pbuild->set_def(fbuild->def_);
+        pbuild->set_infrared(fbuild->infrared_);
+        pbuild->set_nottoatk(fbuild->nottoatk_);
+        pbuild->set_speed(fbuild->speed_);
+        pbuild->set_aspee(fbuild->aspee_);
+        pbuild->set_arange(fbuild->arange_);
+        pbuild->set_modletype(fbuild->modleType_);
+        pbuild->set_born(fbuild->born_);
+        pbuild->set_borntime(fbuild->bornTime_);
+        pbuild->set_name(fbuild->name_);
+        pbuild->set_maxhp(fbuild->maxhp_);
+
+
     }
     for(auto ite:prtFight->build_tow)
     {
+        prt_Fight_build fbuild=ite.second;
+        to_Figth::build *pbuild=fight_info.add_builds_tow();
+        pbuild->set_id(fbuild->id_);
+        pbuild->set_code(fbuild->code_);
+        pbuild->set_eyerange(fbuild->eyerange_);
+        pbuild->set_hp(fbuild->hp_);
+        pbuild->set_maxhp(fbuild->maxhp_);
+        pbuild->set_mp(fbuild->mp_);
+        pbuild->set_atk(fbuild->atk_);
+        pbuild->set_def(fbuild->def_);
+        pbuild->set_infrared(fbuild->infrared_);
+        pbuild->set_nottoatk(fbuild->nottoatk_);
+        pbuild->set_speed(fbuild->speed_);
+        pbuild->set_aspee(fbuild->aspee_);
+        pbuild->set_arange(fbuild->arange_);
+        pbuild->set_modletype(fbuild->modleType_);
+        pbuild->set_born(fbuild->born_);
+        pbuild->set_borntime(fbuild->bornTime_);
+        pbuild->set_name(fbuild->name_);
+        pbuild->set_maxhp(fbuild->maxhp_);
 
     }
 }

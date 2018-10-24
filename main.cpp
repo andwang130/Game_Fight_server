@@ -88,9 +88,15 @@ private:
     Eventloop *loop_;
     std::shared_ptr<TcpServer> tcpServer;
 };
-int main() {
+void init()
+{
     HeroData heroData;
     heroData.init();
+    SkillsData skillsData;
+    skillsData.init();
+}
+int main() {
+    init();
     std::cout << "Hello, World!" << std::endl;
     inetAddress address("0.0.0.0",8081);
     Eventloop loop;

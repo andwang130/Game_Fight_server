@@ -7,7 +7,7 @@
 Figth_initHandler::Figth_initHandler(const CoonPrt &coonPrt, protocol_ &aProtocol):BaseHandler(coonPrt,aProtocol)
 {
     port=8081;
-    ip="127.0.0.1";
+    ip="192.168.0.105";
 
     switch(aProtocol_.coomd)
     {
@@ -33,8 +33,9 @@ void Figth_initHandler::init_fight()
     rq_fight_init.set_roomid(figth_init.roomid());
 
 
-    prt_fight figth;
+    prt_fight figth(new Figth());
     figth->fightid=figth_init.roomid();
+
     build_init(figth);
     for(int i=0;i<figth_init.plays_size();i++)
     {   to_Figth::Fight_play *fight_play=rq_fight_init.add_fight_plays();

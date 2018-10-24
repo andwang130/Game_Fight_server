@@ -61,7 +61,8 @@ add_executable(FightServer main.cpp
         Model/FightBuild.cpp
         Model/Hero.cpp
         Model/Skills.cpp
-        Model/Fightplay.cpp)
+        Model/Fightplay.cpp
+        Handler/PlayinintHandelr.cpp)
 target_link_libraries(FightServer libmysqlpp.so)#会在lib路径找到
 
 target_link_libraries(FightServer ${PROTOBUF_LIBRARIES})
