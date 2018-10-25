@@ -33,8 +33,10 @@ void Figth_initHandler::init_fight()
     rq_fight_init.set_roomid(figth_init.roomid());
 
 
+
     prt_fight figth(new Figth());
     figth->fightid=figth_init.roomid();
+
 
     build_init(figth);
     for(int i=0;i<figth_init.plays_size();i++)
